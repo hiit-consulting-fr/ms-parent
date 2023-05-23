@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>fr.hiit</groupId>
+    <artifactId>ms-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <scm>
+        <url>https://github.com/hiit-consulting-fr/ms-parent</url>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/hiit-consulting-fr/ms-parent/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <url>https://github.com/hiit-consulting-fr/ms-parent/actions</url>
+    </ciManagement>
+
+    <organization>
+        <name>Hi!t Consulting</name>
+        <url>https://www.hiit-consulting.fr/</url>
+    </organization>
+
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+
+        <!-- Dependency versions -->
+        <h2.version>2.1.214</h2.version>
+        <springdoc-openapi-starter-webmvc-api.version>2.1.0</springdoc-openapi-starter-webmvc-api.version>
+
+        <!-- Plugin versions -->
+        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.9</jacoco-maven-plugin.version>
+        <jib-maven-plugin.version>3.3.1</jib-maven-plugin.version>
+
+        <!-- Properties -->
+        <repo.base.url>harbor.hiit-consulting.fr</repo.base.url>
+        <application.name>app-name</application.name>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Api -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+                <version>${springdoc-openapi-starter-webmvc-api.version}</version>
+            </dependency>
+
+            <!-- Others -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <!-- Database -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib-maven-plugin.version}</version>
+                <configuration>
+                    <from>
+                        <image>azul/zulu-openjdk-alpine:17-jre-headless</image>
+                    </from>
+                    <to>
+                        <image>${repo.base.url}/${application.name}/${project.artifactId}</image>
+                        <tags>
+                            <tag>${GITHUB_SHA}</tag>
+                            <tag>${GITHUB_REF_NAME}</tag>
+                            <tag>latest</tag>
+                        </tags>
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Xms64m</jvmFlag>
+                            <jvmFlag>-Xss256k</jvmFlag>
+                            <jvmFlag>-Dcommit.hash=${GITHUB_SHA}</jvmFlag>
+                        </jvmFlags>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>coverage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>generate-code-coverage-report</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Hi!t Consulting Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/hiit-consulting-fr/ms-parent</url>
+        </repository>
+    </distributionManagement>
+
+</project>
