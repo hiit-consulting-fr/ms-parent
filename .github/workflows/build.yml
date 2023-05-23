@@ -33,6 +33,6 @@ jobs:
         uses: advanced-security/maven-dependency-submission-action@v3
 
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
+        run: mvn deploy --no-transfer-progress
         env:
           GITHUB_TOKEN: ${{ github.token }}
