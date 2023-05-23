@@ -44,7 +44,7 @@
         <!-- Plugin versions -->
         <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
-        <jib-maven-plugin.version>3.3.1</jib-maven-plugin.version>
+        <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
 
         <!-- Properties -->
         <repo.base.url>harbor.hiit-consulting.fr</repo.base.url>
