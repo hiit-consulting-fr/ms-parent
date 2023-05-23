@@ -7,8 +7,8 @@ on:
 
 jobs:
   deploy:
-    if: github.event.base_ref == 'refs/heads/master'
-    runs-on: [self-hosted, Linux]
+    if: github.event.base_ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
 
     steps:
 
