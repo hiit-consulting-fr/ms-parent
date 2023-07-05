@@ -39,7 +39,7 @@
 
         <!-- Dependency versions -->
         <spring.cloud>2022.0.3</spring.cloud>
-        <h2.version>2.1.214</h2.version>
+        <h2.version>2.2.220</h2.version>
         <springdoc-openapi-starter-webmvc-api.version>2.1.0</springdoc-openapi-starter-webmvc-api.version>
 
         <!-- Plugin versions -->
