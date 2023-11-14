@@ -35,7 +35,7 @@
     </organization>
 
     <properties>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
 
         <!-- Dependency versions -->
         <spring.cloud>2022.0.4</spring.cloud>
@@ -121,7 +121,7 @@
                 <version>${jib-maven-plugin.version}</version>
                 <configuration>
                     <from>
-                        <image>azul/zulu-openjdk-alpine:17-jre-headless</image>
+                        <image>azul/zulu-openjdk-alpine:21-jre-headless</image>
                     </from>
                     <to>
                         <image>${repo.base.url}/${application.name}/${project.artifactId}</image>
