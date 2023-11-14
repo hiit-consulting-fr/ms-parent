@@ -77,6 +77,13 @@
                 <artifactId>h2</artifactId>
                 <version>${h2.version}</version>
             </dependency>
+
+            <!-- Others -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>2.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -86,6 +93,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- Others -->
@@ -126,16 +137,13 @@
                     <to>
                         <image>${repo.base.url}/${application.name}/${project.artifactId}</image>
                         <tags>
-                            <tag>${GITHUB_SHA}</tag>
-                            <tag>${GITHUB_REF_NAME}</tag>
-                            <tag>latest</tag>
+                            <tag>${env.IMAGE_TAG}</tag>
                         </tags>
                     </to>
                     <container>
                         <jvmFlags>
                             <jvmFlag>-Xms64m</jvmFlag>
                             <jvmFlag>-Xss256k</jvmFlag>
-                            <jvmFlag>-Dcommit.hash=${GITHUB_SHA}</jvmFlag>
                         </jvmFlags>
                     </container>
                 </configuration>
