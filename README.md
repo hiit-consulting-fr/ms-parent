@@ -1,3 +1,3 @@
 # ms-parent
 
-Parent pom.xml of microservices at Hi!t-Consulting
+Parent pom.xml for microservices at Hi!t-Consulting
