@@ -27,7 +27,7 @@ jobs:
 
       - name: Maven build & test
         run: >-
-          mvn clean verify --no-transfer-progress
+          mvn clean verify
 
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@v3
