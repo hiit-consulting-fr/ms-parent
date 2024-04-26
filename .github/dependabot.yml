@@ -14,3 +14,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+
+registries:
+  maven-github:
+    type: maven-repository
+    url: https://maven.pkg.github.com/hiit-consulting-fr/ms-common
+    username: ${{ vars.MAVEN_USER }}
+    password: ${{ secrets.MAVEN_PASSWORD }}
