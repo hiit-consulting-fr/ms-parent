@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "daily"
     registries:
-    - maven-github
+      - maven-github
 
   - package-ecosystem: "npm"
     directory: "/"
