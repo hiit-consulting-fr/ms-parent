@@ -13,7 +13,7 @@
 
   <groupId>fr.hiitconsulting</groupId>
   <artifactId>ms-parent</artifactId>
-  <version>1.6.1-SNAPSHOT</version>
+  <version>1.11.0-SNAPSHOT</version>
   <name>${project.artifactId}</name>
   <packaging>pom</packaging>
 
@@ -71,6 +71,7 @@
     <repo.base.url>harbor.hiit-consulting.fr</repo.base.url>
     <application.name>app-name</application.name>
     <service.heap.size>32m</service.heap.size>
+    <service.metaspace.size>32m</service.metaspace.size>
 
   </properties>
 
@@ -208,11 +209,28 @@
               <artifactId>lombok</artifactId>
             </exclude>
           </excludes>
+          <image>
+            <name>${repo.base.url}/${application.name}/${project.artifactId}:${env.IMAGE_TAG}</name>
+            <env>
+              <BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
+              <BP_SPRING_AOT_ENABLED>true</BP_SPRING_AOT_ENABLED>
+              <BP_JVM_CDS_ENABLED>true</BP_JVM_CDS_ENABLED>
+              <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
+              <BPE_APPEND_JAVA_TOOL_OPTIONS
+                xml:space="preserve">-Xss256K -Xmx${service.heap.size} -XX:ReservedCodeCacheSize=32m -XX:MaxMetaspaceSize=${service.metaspace.size} -Djavax.net.ssl.trustStore=/opt/certificate/cert.jks -Djavax.net.ssl.trustStorePassword=changeit</BPE_APPEND_JAVA_TOOL_OPTIONS>
+            </env>
+          </image>
         </configuration>
         <executions>
           <execution>
             <goals>
               <goal>build-info</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>process-aot</id>
+            <goals>
+              <goal>process-aot</goal>
             </goals>
           </execution>
         </executions>
@@ -413,7 +431,9 @@
               <container>
                 <jvmFlags>
                   <jvmFlag>-Xmx${service.heap.size}</jvmFlag>
+                  <jvmFlag>-XX:MaxMetaspaceSize=${service.metaspace.size}</jvmFlag>
                   <jvmFlag>-Xss256k</jvmFlag>
+                  <jvmFlag>-XX:ReservedCodeCacheSize=32m</jvmFlag>
                   <jvmFlag>-Djavax.net.ssl.trustStore=/opt/certificate/cert.jks</jvmFlag>
                   <jvmFlag>-Djavax.net.ssl.trustStorePassword=changeit</jvmFlag>
                 </jvmFlags>
