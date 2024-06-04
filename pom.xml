@@ -220,6 +220,13 @@
                 xml:space="preserve">-Xss256K -Xmx${service.heap.size} -XX:ReservedCodeCacheSize=32m -XX:MaxMetaspaceSize=${service.metaspace.size} -Djavax.net.ssl.trustStore=/opt/certificate/cert.jks -Djavax.net.ssl.trustStorePassword=changeit</BPE_APPEND_JAVA_TOOL_OPTIONS>
             </env>
           </image>
+          <docker>
+            <publishRegistry>
+              <username>${env.REGISTRY_USERNAME}</username>
+              <password>${env.REGISTRY_PASSWORD}</password>
+              <url>${env.REGISTRY_HOSTNAME}</url>
+            </publishRegistry>
+          </docker>
         </configuration>
         <executions>
           <execution>
