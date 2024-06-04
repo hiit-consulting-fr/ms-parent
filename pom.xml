@@ -13,7 +13,7 @@
 
   <groupId>fr.hiitconsulting</groupId>
   <artifactId>ms-parent</artifactId>
-  <version>1.11.0-SNAPSHOT</version>
+  <version>1.11.2-SNAPSHOT</version>
   <name>${project.artifactId}</name>
   <packaging>pom</packaging>
 
@@ -71,7 +71,6 @@
     <repo.base.url>harbor.hiit-consulting.fr</repo.base.url>
     <application.name>app-name</application.name>
     <service.heap.size>32m</service.heap.size>
-    <service.metaspace.size>32m</service.metaspace.size>
 
   </properties>
 
@@ -217,7 +216,7 @@
               <BP_JVM_CDS_ENABLED>true</BP_JVM_CDS_ENABLED>
               <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
               <BPE_APPEND_JAVA_TOOL_OPTIONS
-                xml:space="preserve">-Xss256K -Xmx${service.heap.size} -XX:ReservedCodeCacheSize=32m -XX:MaxMetaspaceSize=${service.metaspace.size} -Djavax.net.ssl.trustStore=/opt/certificate/cert.jks -Djavax.net.ssl.trustStorePassword=changeit</BPE_APPEND_JAVA_TOOL_OPTIONS>
+                xml:space="preserve">-Xss256K -Xmx${service.heap.size} -Djavax.net.ssl.trustStore=/opt/certificate/cert.jks -Djavax.net.ssl.trustStorePassword=changeit</BPE_APPEND_JAVA_TOOL_OPTIONS>
             </env>
           </image>
           <docker>
@@ -438,9 +437,7 @@
               <container>
                 <jvmFlags>
                   <jvmFlag>-Xmx${service.heap.size}</jvmFlag>
-                  <jvmFlag>-XX:MaxMetaspaceSize=${service.metaspace.size}</jvmFlag>
                   <jvmFlag>-Xss256k</jvmFlag>
-                  <jvmFlag>-XX:ReservedCodeCacheSize=32m</jvmFlag>
                   <jvmFlag>-Djavax.net.ssl.trustStore=/opt/certificate/cert.jks</jvmFlag>
                   <jvmFlag>-Djavax.net.ssl.trustStorePassword=changeit</jvmFlag>
                 </jvmFlags>
