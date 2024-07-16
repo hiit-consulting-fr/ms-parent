@@ -48,7 +48,7 @@
 
     <commons-compress.version>1.26.2</commons-compress.version>
     <guava.version>33.2.1-jre</guava.version>
-    <h2.version>2.2.224</h2.version>
+    <h2.version>2.3.230</h2.version>
     <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
     <mapstruct.version>1.5.5.Final</mapstruct.version>
     <mockserver-spring-test-listener.version>5.15.0</mockserver-spring-test-listener.version>
