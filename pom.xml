@@ -52,7 +52,7 @@
     <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
     <mapstruct.version>1.6.0</mapstruct.version>
     <mockserver-spring-test-listener.version>5.15.0</mockserver-spring-test-listener.version>
-    <snakeyaml.version>2.2</snakeyaml.version>
+    <snakeyaml.version>2.3</snakeyaml.version>
     <spring.version>3.3.3</spring.version>
     <spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
     <springdoc-openapi-starter-webmvc-api.version>2.6.0</springdoc-openapi-starter-webmvc-api.version>
