@@ -41,7 +41,7 @@
   </organization>
 
   <properties>
-    <java.version>23</java.version>
+    <java.version>21</java.version>
 
     <!-- Dependency versions -->
     <ms-common.version>1.1.0</ms-common.version>
@@ -413,7 +413,7 @@
             <version>${jib-maven-plugin.version}</version>
             <configuration>
               <from>
-                <image>azul/zulu-openjdk-alpine:23-jre-headless</image>
+                <image>azul/zulu-openjdk-alpine:21-jre-headless</image>
               </from>
               <to>
                 <image>${repo.base.url}/${application.name}/${project.artifactId}</image>
