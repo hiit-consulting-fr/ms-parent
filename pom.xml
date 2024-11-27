@@ -54,7 +54,7 @@
     <mockserver-spring-test-listener.version>5.15.0</mockserver-spring-test-listener.version>
     <snakeyaml.version>2.3</snakeyaml.version>
     <spring.version>3.4.0</spring.version>
-    <spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
+    <spring-cloud-dependencies.version>2023.0.4</spring-cloud-dependencies.version>
     <springdoc-openapi-starter-webmvc-api.version>2.7.0</springdoc-openapi-starter-webmvc-api.version>
     <xmlunit-core.version>2.10.0</xmlunit-core.version>
 
