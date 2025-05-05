@@ -66,7 +66,7 @@
     <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
     <openapi-generator-maven-plugin.version>7.13.0</openapi-generator-maven-plugin.version>
-    <springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
+    <springdoc-openapi-maven-plugin.version>1.5</springdoc-openapi-maven-plugin.version>
 
     <!-- Properties -->
     <repo.base.url>harbor.hiit-consulting.fr</repo.base.url>
