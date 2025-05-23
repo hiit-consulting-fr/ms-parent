@@ -59,7 +59,7 @@
     <xmlunit-core.version>2.10.2</xmlunit-core.version>
 
     <!-- Plugin versions -->
-    <git-commit-id-maven-plugin.version>9.0.1</git-commit-id-maven-plugin.version>
+    <git-commit-id-maven-plugin.version>9.0.2</git-commit-id-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
     <jib-maven-plugin.version>3.4.5</jib-maven-plugin.version>
     <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
