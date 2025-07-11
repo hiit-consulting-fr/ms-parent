@@ -5,15 +5,15 @@
   "license": "Apache 2.0",
   "homepage": "https://github.com/hiit-consulting-fr/ms-parent#readme",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@10.13.1",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   }
 }
