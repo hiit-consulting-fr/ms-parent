@@ -13,7 +13,7 @@
 
   <groupId>fr.hiitconsulting</groupId>
   <artifactId>ms-parent</artifactId>
-  <version>1.25.0-SNAPSHOT</version>
+  <version>1.26.0-SNAPSHOT</version>
   <name>${project.artifactId}</name>
   <packaging>pom</packaging>
 
@@ -55,7 +55,7 @@
     <mapstruct.version>1.6.3</mapstruct.version>
     <mockserver-spring-test-listener.version>5.15.0</mockserver-spring-test-listener.version>
     <snakeyaml.version>2.5</snakeyaml.version>
-    <spring.version>3.5.7</spring.version>
+    <spring-boot.version>3.5.7</spring-boot.version>
     <spring-cloud-dependencies.version>2025.0.0</spring-cloud-dependencies.version>
     <springdoc-openapi-starter-webmvc-api.version>2.8.13</springdoc-openapi-starter-webmvc-api.version>
     <xmlunit-core.version>2.11.0</xmlunit-core.version>
@@ -150,13 +150,6 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- Spring -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-configuration-processor</artifactId>
-      <optional>true</optional>
-    </dependency>
-
     <!-- Others -->
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -246,7 +239,7 @@
             <path>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-configuration-processor</artifactId>
-              <version>${spring.version}</version>
+              <version>${spring-boot.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
