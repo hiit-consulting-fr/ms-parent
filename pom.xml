@@ -57,7 +57,7 @@
     <snakeyaml.version>2.5</snakeyaml.version>
     <spring-boot.version>3.5.7</spring-boot.version>
     <spring-cloud-dependencies.version>2025.0.0</spring-cloud-dependencies.version>
-    <springdoc-openapi-starter-webmvc-api.version>2.8.13</springdoc-openapi-starter-webmvc-api.version>
+    <springdoc-openapi-starter-webmvc-api.version>2.8.14</springdoc-openapi-starter-webmvc-api.version>
     <swagger-core-jakarta.version>2.2.40</swagger-core-jakarta.version>
     <xmlunit-core.version>2.11.0</xmlunit-core.version>
 
