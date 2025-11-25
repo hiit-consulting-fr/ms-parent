@@ -44,7 +44,7 @@
     <java.version>25</java.version>
 
     <!-- Dependency versions -->
-    <ms-common.version>1.4.0</ms-common.version>
+    <ms-common.version>1.5.0</ms-common.version>
 
     <asm.version>9.9</asm.version>
     <commons-compress.version>1.28.0</commons-compress.version>
