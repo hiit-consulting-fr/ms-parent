@@ -59,7 +59,7 @@
     <spring-cloud-dependencies.version>2025.1.0</spring-cloud-dependencies.version>
     <springdoc-openapi-starter-webmvc-api.version>3.0.0</springdoc-openapi-starter-webmvc-api.version>
     <swagger-core-jakarta.version>2.2.41</swagger-core-jakarta.version>
-    <testcontainers-bom.version>1.21.3</testcontainers-bom.version>
+    <testcontainers-bom.version>2.0.2</testcontainers-bom.version>
     <xmlunit-core.version>2.11.0</xmlunit-core.version>
 
     <!-- Plugin versions -->
