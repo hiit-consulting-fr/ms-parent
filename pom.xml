@@ -84,6 +84,11 @@
       <!-- Project -->
       <dependency>
         <groupId>fr.hiitconsulting</groupId>
+        <artifactId>ms-common-domain</artifactId>
+        <version>${ms-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.hiitconsulting</groupId>
         <artifactId>ms-common</artifactId>
         <version>${ms-common.version}</version>
       </dependency>
