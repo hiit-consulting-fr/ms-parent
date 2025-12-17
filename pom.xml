@@ -46,7 +46,7 @@
     <!-- Dependency versions -->
     <ms-common.version>1.8.0</ms-common.version>
 
-    <asm.version>9.9</asm.version>
+    <asm.version>9.9.1</asm.version>
     <commons-compress.version>1.28.0</commons-compress.version>
     <commons-lang3.version>3.20.0</commons-lang3.version>
     <guava.version>33.5.0-jre</guava.version>
