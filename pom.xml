@@ -58,7 +58,7 @@
     <spring-boot.version>4.1.2</spring-boot.version>
     <spring-cloud-dependencies.version>2025.1.4</spring-cloud-dependencies.version>
     <springdoc-openapi-starter-webmvc-api.version>3.2.0</springdoc-openapi-starter-webmvc-api.version>
-    <swagger-core-jakarta.version>2.2.55</swagger-core-jakarta.version>
+    <swagger-core-jakarta.version>2.2.56</swagger-core-jakarta.version>
     <testcontainers-bom.version>2.0.5</testcontainers-bom.version>
     <xmlunit-core.version>2.14.0</xmlunit-core.version>
 
